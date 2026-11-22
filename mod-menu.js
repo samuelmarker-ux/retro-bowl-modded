@@ -23,6 +23,7 @@
   var MOD_SETTINGS_KEY = "jax_gameplay_mods";
   var gameplayMods = (window.JaxMods = {
     fieldGoalAimbot: false,
+    longFieldGoal: false,
     noTackles: false,
     noFumbles: false,
     noInjuries: false,
@@ -282,6 +283,9 @@
         if (gameplayMods.fieldGoalAimbot && arguments[0]) {
           arguments[0]._D11 = 55;
           arguments[0]._101 = 300;
+        }
+        if (gameplayMods.longFieldGoal && arguments[0]) {
+          arguments[0]._101 = 600;
         }
         return originalKick.apply(this, arguments);
       };
